@@ -1,13 +1,13 @@
 /**
  * Web application
  */
-const apiUrl = 'https://us-south.functions.appdomain.cloud/api/v1/web/b7802d12-3410-4f09-aa8a-7432209b8b8c/guestbook/';
+const apiUrl = 'https://us-south.functions.appdomain.cloud/api/v1/web/b7802d12-3410-4f09-aa8a-7432209b8b8c/guestbook';
 const guestbook = {
   // retrieve the existing guestbook entries
   get() {
     return $.ajax({
       type: 'GET',
-      url: '${apiUrl}read-guestbook-entries-sequence.json',
+      url: 'https://us-south.functions.appdomain.cloud/api/v1/web/b7802d12-3410-4f09-aa8a-7432209b8b8c/guestbook/read-guestbook-entries-sequence',
       dataType: 'json'
     });
   },
@@ -16,7 +16,7 @@ const guestbook = {
     console.log('Sending', name, email, comment)
     return $.ajax({
       type: 'PUT',
-      url: '${apiUrl}save-guestbook-entry-sequence.json',
+      url: 'https://us-south.functions.appdomain.cloud/api/v1/web/b7802d12-3410-4f09-aa8a-7432209b8b8c/guestbook/save-guestbook-entry-sequence',
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify({
         name,
